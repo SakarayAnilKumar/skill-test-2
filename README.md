@@ -106,14 +106,14 @@ Execute the following tests in PowerShell and capture a screenshot for each test
   kubectl get nodes
   ```
 
-* 
+* <img width="1365" height="182" alt="image" src="https://github.com/user-attachments/assets/2290fdc3-2a0c-4f1c-a94b-56aea5262f84" />
 
 ### Test 2: Deployments, Pods, Services & Endpoints
 * **Command:**
   ```powershell
   kubectl get deploy,pods,svc,endpoints
   ```
-* 
+* <img width="1376" height="645" alt="image" src="https://github.com/user-attachments/assets/1dbbea82-0f51-483d-b9c7-474146988555" />
 
 ### Test 4: `ingress-nginx` Controller & Generated `nginx.conf` Rules
 * **Command:**
@@ -123,7 +123,7 @@ Execute the following tests in PowerShell and capture a screenshot for each test
   $POD = kubectl get pods -n ingress-nginx -l app.kubernetes.io/component=controller -o jsonpath="{.items[0].metadata.name}"
   kubectl exec -n ingress-nginx $POD -- cat /etc/nginx/nginx.conf | findstr /C:"location " /C:"proxy_pass"
   ```
-* **Screenshot:** 
+* <img width="1905" height="630" alt="image" src="https://github.com/user-attachments/assets/46ff277a-a0ed-4ede-ae63-2211d45a2390" />
 
 ### Test 5: Gateway Logs & End-to-End HTTP Request via Ingress
 * **Command:**
@@ -131,7 +131,7 @@ Execute the following tests in PowerShell and capture a screenshot for each test
   kubectl logs deploy/gateway-service --tail=50
   curl.exe -i http://localhost/api/orders
   ```
-* 
+* <img width="1400" height="317" alt="image" src="https://github.com/user-attachments/assets/ab717803-5b6c-46ef-a6b3-8e7265cbcf95" />
 
 ### Test 6: Pod Self-Healing & On-Demand `port-forward` Access
 * **Command:**
@@ -142,4 +142,6 @@ Execute the following tests in PowerShell and capture a screenshot for each test
   kubectl port-forward svc/user-service 3000:3000
   curl.exe -i http://localhost:3000
   ```
-* 
+* <img width="1417" height="452" alt="image" src="https://github.com/user-attachments/assets/064d495c-dbc3-4cbc-9b47-2b754a097bff" />
+* <img width="851" height="297" alt="image" src="https://github.com/user-attachments/assets/b7c7c95b-dad5-4672-8e61-30c7e525abb1" />
+
